@@ -13,21 +13,21 @@ class TokenType {
 }
 
 class TokenTypeList {
-    public static array $tokenTypes;
+    public array $tokenTypes;
 
     public function __construct() {
         $this->tokenTypes = [
             'NUMBER' => new TokenType('NUMBER', '[0-9]*'),
             'VARIABLE' => new TokenType('PLUS', '[а-я]*'),
-            'SEMICOLON' => new TokenType('MINUS', ';'),
-            'SPACE' => new TokenType('TIMES', '\\n\\t\\r'),
+            'SEMICOLON' => new TokenType('SEMICOLON', ';'),
+            'SPACE' => new TokenType('TIMES', '[\\n\\t\\r ]'),
             'ASSIGN' => new TokenType('DIVIDE', 'РАВНО'),
             'LOG' => new TokenType('LPAREN', 'ЛОГ'),
-            'PLUS' => new TokenType('NUMBER', 'ПЛЮС'),
-            'MINUS' => new TokenType('NUMBER', 'МИНУС'),
-            'LPAR' => new TokenType('LPAR', '\\('),
-            'RPAR' => new TokenType('RPAR', '\\)')
+            'PLUS' => new TokenType('PLUS', 'ПЛЮС'),
+            'MINUS' => new TokenType('MINUS', 'МИНУС')
         ];
+
+        return $this->tokenTypes;
     }
 
 }

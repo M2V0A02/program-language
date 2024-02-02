@@ -1,0 +1,15 @@
+{
+    "name": "mickhail/program-language",
+    "autoload": {
+        "psr-4": {
+            "Mickhail\\ProgramLanguage\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "volodin",
+            "email": "volodin@arnica.pro"
+        }
+    ],
+    "require": {}
+}
