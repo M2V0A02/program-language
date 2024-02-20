@@ -3,10 +3,10 @@
 require dirname(dirname(__FILE__)) . '/src/TokenType.php';
 
 class Lexer {
-    public string $code;
-    public string $tempCode;
-    public int $pos;
-    public array $tokenList;
+    public $code;
+    public $tempCode;
+    public $pos;
+    public $tokenList;
 
     public function __construct(string $code)
     {
@@ -14,7 +14,7 @@ class Lexer {
         $this->tokenList = [];
     }
 
-    public function lexAnalysis() {
+    public function lexAnalysis(): array {
         $tempCode = $this->code;
         while(mb_strlen($tempCode, 'UTF-8') > 0) {
             array_push($this->tokenList, $this->nextToken($tempCode));
@@ -30,8 +30,8 @@ class Lexer {
                 $tempCode = mb_substr($tempCode, mb_strlen($match[0], 'UTF-8'), null, 'UTF-8');
                 return new Token($tokenType->name, $match[0]);
             }
-        }
+        };
         
-        return throw new Exception("Нет подходящего типа токена");
+        return new Exception("Нет подходящего типа токена");
     }
 }

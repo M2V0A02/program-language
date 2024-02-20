@@ -1,9 +1,9 @@
 <?php
 
 class Token {
-    public string $type;
-    public string $text;
-    public int $pos;
+    public $type;
+    public $text;
+    public $pos;
 
     public function __construct(string $type, string $text, int $pos = 0) {
         $this->type = $type;

@@ -1,8 +1,8 @@
 <?php
 
 class TokenType {
-    public string $name;
-    public string $regex;
+    public $name;
+    public $regex;
 
 
     public function __construct(string $name, string $regex) {
@@ -13,7 +13,7 @@ class TokenType {
 }
 
 class TokenTypeList {
-    public array $tokenTypes;
+    public $tokenTypes;
 
     public function __construct() {
         $this->tokenTypes = [
